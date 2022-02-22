@@ -196,7 +196,5 @@ img {
     .music__box-main{width: 85%;}
     .settings__title{font-size: 1.2rem;}
     .settings__item h2{font-size: 1.1rem;}
-    .settings__item input{
-        width: 100%;
-    }
+    .settings__item input{width: 100%;}
 }
