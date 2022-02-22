@@ -195,7 +195,7 @@ img {
     .box__title{margin: 15px 0;font-size: 1.7rem;}
     .music__box{padding: 15px;}
     .music__box-main{width: 85%;}
-    .settings__title{font-size: 1.2rem;}
-    .settings__item h2{font-size: 1.1rem;}
+    .settings__title{font-size: 1.5rem;}
+    .settings__item h2{font-size: 1.2rem;}
     .settings__item input{width: 100%;}
 }
