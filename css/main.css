@@ -9,6 +9,11 @@ body {
     overflow-x: hidden;
 }
 
+@font-face{
+    font-family: Poppins;
+    src: url("../font/Poppins-Medium.ttf");
+}
+
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
