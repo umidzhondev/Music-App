@@ -77,11 +77,6 @@ function play() {
     // *  Change Speed
     changeSpeed()
 
-    // * Change Input Range Value
-    setInterval(() => {
-        range.value++;
-    }, 50);
-
 
     // * Play Animation
     image.style.cssText = 'animation-name: rotate';
