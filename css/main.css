@@ -1,17 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 html,
 body {
     overflow-x: hidden;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 body {
-    font-family: "Poppins", sans-serif;
     font-weight: 500;
     min-height: 100vh;
     background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
@@ -61,7 +61,7 @@ img {
 
 .music__box-title {
     font-size: 1.6rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 15px;
     color: #222;
 }
