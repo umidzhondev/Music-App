@@ -10,13 +10,13 @@ body {
 }
 
 @font-face{
-    font-family: Poppins;
+    font-family: "Poppins";
     src: url("../font/Poppins-Medium.ttf");
 }
 
 body {
     font-family: "Poppins", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     min-height: 100vh;
     background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
 }
