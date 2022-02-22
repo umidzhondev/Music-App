@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.box__title {
+    font-size: 2.3rem;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    margin: 20px 0;
+}
+
+.music__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 550px;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px 30px;
+}
+
+.music__box-title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.music__box-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 65%;
+}
+
+.music__box-imgbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.music__box-imgbox img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    animation-name: umidjon;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.music__box-duration {
+    width: 100%;
+    accent-color: #222;
+    margin-bottom: 25px;
+}
+
+.music__box-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.music__box-icon {
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.music__box-icon:first-child {
+    margin-left: 0;
+}
+
+.music__box-icon i {
+    font-size: 1.5rem;
+    color: #222;
+}
+
+.pause {
+    display: none;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.settings {
+    width: 550px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.settings__title {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.7rem;
+    color: #222;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.settings__items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+.settings__item{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.settings__item h2{
+    font-size: 1.4rem;
+    color: #000;
+    margin-bottom: 5px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.settings__item input{
+    width: 85%;
+    accent-color: #0064ff;
+}
+
+/* * Media  */
+@media only screen and (max-width: 650px){
+    .box__title{font-size: 2rem;}
+    .music__box,.settings{width: 95vw;}
+    .music__box-title{font-size: 1.4rem;}
+    .settings__title{font-size: 1.5rem;}
+    .settings__item h2{font-size: 1.3rem;}
+}
+@media only screen and (max-width: 576px){
+    .container{min-height: auto;}
+    .box__title{margin: 25px 0;font-size: 1.7rem;}
+    .music__box{flex-direction: column;padding: 20px;}
+    .music__box-imgbox{margin: 0;margin-bottom: 12px;}
+    .music__box-main{align-items: center;}
+    .music__box-icon{margin: 0;}
+    .music__box-navigation{justify-content: space-around;}
+    .settings__title{font-size: 1.4rem;}
+    .settings__item h2{font-size: 1.2rem;}
+}
+@media only screen and (max-width: 400px){
+    .box__title{margin: 15px 0;font-size: 1.7rem;}
+    .music__box{padding: 15px;}
+    .music__box-main{width: 85%;}
+    .settings__title{font-size: 1.2rem;}
+    .settings__item h2{font-size: 1.1rem;}
+    .settings__item input{
+        width: 100%;
+    }
+}

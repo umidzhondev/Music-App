@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <!--* FONTAWESOME LINK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!--* FONTAWESOME LINK END -->
+    <!--* CSS FILE -->
+    <link rel="stylesheet" href="./css/main.css">
+    <!--* CSS FILE END -->
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1 class="box__title">Music Player App</h1>
+            <div class="music__box">
+                <div class="music__box-imgbox">
+                    <img src="./image/Men.jpg" alt="image...">
+                </div>
+                <div class="music__box-main">
+                    <h2 class="music__box-title">Umidjon Dev</h2>
+                    <input type="range" min="0" value="0" max="10" class="music__box-duration">
+                    <div class="music__box-navigation">
+                        <div class="music__box-icon">
+                            <i class="fas fa-backward prev"></i>
+                        </div>
+                        <div class="music__box-icon">
+                            <i class="fas fa-play play"></i>
+                            <i class="fas fa-pause pause "></i>
+                        </div>
+                        <div class="music__box-icon">
+                            <i class="fas fa-forward next"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="settings">
+            <h2 class="settings__title">Settings</h2>
+            <div class="settings__items">
+                <div class="settings__item">
+                    <h2>Volume - <span class="volume__content">50</span>%</h2>
+                    <input class="volume" min="0" max="10" value="5" type="range">
+                </div>
+                <div class="settings__item">
+                    <h2>Speed - <span class="speed__content">2</span>X</h2>
+                    <input class="speed" min="1" max="6" value="2" type="range">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--* JAVASCRIPT FILE -->
+    <script src="./js/index.js"></script>
+    <!--* JAVASCRIPT FILE END -->
+</body>
+
+</html>
