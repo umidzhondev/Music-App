@@ -138,7 +138,6 @@ function progress() {
 }
 
 function changeDuration(e) {
-    console.log(e);
     audio.currentTime = audio.duration / (progressLine.clientWidth / e.offsetX); 
 }
 
