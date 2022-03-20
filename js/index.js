@@ -4,7 +4,8 @@ const pauseBtn = document.querySelector(".pause");
 const nextBtn = document.querySelector(".next");
 const title = document.querySelector(".music__box-title");
 const image = document.querySelector(".music__box-imgbox img");
-const range = document.querySelector(".music__box-duration")
+const progressLine = document.querySelector(".duration__line")
+const progressShape = document.querySelector(".duration__overlay")
 const volume = document.querySelector(".volume");
 const volumeContent = document.querySelector(".volume__content");
 const speed = document.querySelector(".speed");
@@ -38,24 +39,24 @@ let counter = 0;
 
 // * Music Object
 const audio = new Audio();
-range.value = 0;
 volumeContent.textContent = volume.value * 10;
 speedContent.textContent = speed.value / 2;
-title.textContent = title.textContent.slice(0,15)
+title.textContent = title.textContent.slice(0, 15)
 
 // * Handeler Events
 playBtn.addEventListener("click", play);
 pauseBtn.addEventListener("click", pause);
 prevBtn.addEventListener("click", prev);
 nextBtn.addEventListener("click", next);
-range.addEventListener("input", duration);
 audio.addEventListener("ended", ended);
 volume.addEventListener("input", changeVolume);
 speed.addEventListener("input", changeSpeed);
+audio.addEventListener("timeupdate", progress)
+progressLine.addEventListener("click", changeDuration)
 
 // *  Functions
 function play() {
-    range.setAttribute("max", audio.duration);
+
     // * Change Icons
     playBtn.style.display = "none";
     pauseBtn.style.display = "block";
@@ -66,7 +67,7 @@ function play() {
 
     // * Change Title
     title.textContent = sources[counter].title;
-    title.textContent = title.textContent.slice(0,15)
+    title.textContent = title.textContent.slice(0, 15)
 
     // * Change Image
     image.setAttribute("src", sources[counter].imageSrc);
@@ -76,7 +77,6 @@ function play() {
 
     // *  Change Speed
     changeSpeed()
-
 
     // * Play Animation
     image.style.cssText = 'animation-name: rotate';
@@ -101,9 +101,6 @@ function pause() {
 }
 
 function prev() {
-    // * Range Value
-    range.value = 0;
-    range.setAttribute("max", audio.duration);
     // * Decrementor
     counter--;
     if (counter < 0) {
@@ -121,9 +118,6 @@ function prev() {
 }
 
 function next() {
-    // * Range Value
-    range.value = 0;
-    range.setAttribute("max", audio.duration);
     // * Incrementor
     counter++;
     if (counter > sources.length - 1) {
@@ -139,13 +133,13 @@ function next() {
     play();
 }
 
-function duration() {
-    // * For Ended ?
-    if (range.value == audio.duration.toFixed()) {
-        next()
-    }
-    // * Assigment CurrentTime of Audio to Range Value 
-    audio.currentTime = range.value;
+function progress() {
+    progressShape.style.width = progressLine.clientWidth / audio.duration * audio.currentTime + "px";
+}
+
+function changeDuration(e) {
+    console.log(e);
+    audio.currentTime = audio.duration / (progressLine.clientWidth / e.offsetX); 
 }
 
 function ended() {
@@ -153,12 +147,8 @@ function ended() {
     audio.pause();
     // * Interval 
     setTimeout(() => {
-        audio.play();
-    }, 1000);
-    // * Range Value
-    range.value = 0
-    range.setAttribute("max", audio.duration);
-    next();
+        next();
+    }, 800);
 }
 
 function changeVolume() {
@@ -171,14 +161,13 @@ function changeSpeed() {
     speedContent.textContent = speed.value / 2;
     // * Get Animation Duration Time
     let speedAnimation = 2
-    if(+speed.value <= 2){
+    if (+speed.value <= 2) {
         speedAnimation = 3;
-    }
-    else if(+speed.value <=4 && +speed.value>2){
+    } else if (+speed.value <= 4 && +speed.value > 2) {
         speedAnimation = 1;
-    } 
-    else if(+speed.value <=6 && +speed.value>4){
+    } else if (+speed.value <= 6 && +speed.value > 4) {
         speedAnimation = 0.5;
-    } 
-    image.style.animationDuration = speedAnimation+"s"
+    }
+    image.style.animationDuration = speedAnimation + "s"
+
 }

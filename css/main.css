@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --shadow-box:none;
+    --bg-main: #fff;
 }
 
 html,
@@ -53,7 +59,8 @@ img {
     align-items: center;
     justify-content: space-between;
     width: 550px;
-    background-color: #fff;
+    background: var(--bg-main);
+    box-shadow: var(--shadow-box);
     border-radius: 20px;
     overflow: hidden;
     padding: 20px 30px;
@@ -92,10 +99,22 @@ img {
     animation-iteration-count: infinite;
 }
 
-.music__box-duration {
-    width: 100%;
-    accent-color: #222;
+/* * Duration Line */
+.duration__line {
+    height: 4px;
+    width: 70%;
+    background-color: #576ae2;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
     margin-bottom: 25px;
+    cursor: pointer;
+}
+.duration__overlay{
+    width: 0;
+    height: 100%;
+    background-color: #e2e2e2;
 }
 
 .music__box-navigation {
@@ -132,7 +151,8 @@ img {
 .settings {
     width: 550px;
     padding: 20px;
-    background-color: #fff;
+    background: var(--bg-main);
+    box-shadow: var(--shadow-box);
     border-radius: 20px;
 }
 
@@ -145,14 +165,16 @@ img {
     letter-spacing: 1px;
     margin-bottom: 20px;
 }
-.settings__items{
+
+.settings__items {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     flex-direction: column;
 }
-.settings__item{
+
+.settings__item {
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -160,42 +182,108 @@ img {
     flex-direction: column;
     margin-bottom: 15px;
 }
-.settings__item h2{
+
+.settings__item h2 {
     font-size: 1.4rem;
     color: #000;
     margin-bottom: 5px;
     font-weight: 500;
     letter-spacing: 1px;
 }
-.settings__item input{
+
+.settings__item input {
     width: 85%;
     accent-color: #0064ff;
 }
 
 /* * Media  */
-@media only screen and (max-width: 650px){
-    .box__title{font-size: 2rem;}
-    .music__box,.settings{width: 95vw;}
-    .music__box-title{font-size: 1.4rem;}
-    .settings__title{font-size: 1.5rem;}
-    .settings__item h2{font-size: 1.3rem;}
+@media only screen and (max-width: 650px) {
+    .box__title {
+        font-size: 2rem;
+    }
+
+    .music__box,
+    .settings {
+        width: 95vw;
+    }
+
+    .music__box-title {
+        font-size: 1.4rem;
+    }
+
+    .settings__title {
+        font-size: 1.5rem;
+    }
+
+    .settings__item h2 {
+        font-size: 1.3rem;
+    }
 }
-@media only screen and (max-width: 576px){
-    .container{min-height: auto;}
-    .box__title{margin: 25px 0;font-size: 1.7rem;}
-    .music__box{flex-direction: column;padding: 20px;}
-    .music__box-imgbox{margin: 0;margin-bottom: 12px;}
-    .music__box-main{align-items: center;}
-    .music__box-icon{margin: 0;}
-    .music__box-navigation{justify-content: space-around;}
-    .settings__title{font-size: 1.4rem;}
-    .settings__item h2{font-size: 1.2rem;}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        min-height: auto;
+    }
+
+    .box__title {
+        margin: 25px 0;
+        font-size: 1.7rem;
+    }
+
+    .music__box {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .music__box-imgbox {
+        margin: 0;
+        margin-bottom: 12px;
+    }
+
+    .music__box-main {
+        align-items: center;
+    }
+
+    .music__box-icon {
+        margin: 0;
+    }
+
+    .music__box-navigation {
+        justify-content: space-around;
+    }
+
+    .settings__title {
+        font-size: 1.4rem;
+    }
+
+    .settings__item h2 {
+        font-size: 1.2rem;
+    }
 }
-@media only screen and (max-width: 400px){
-    .box__title{margin: 15px 0;font-size: 1.7rem;}
-    .music__box{padding: 15px;}
-    .music__box-main{width: 85%;}
-    .settings__title{font-size: 1.5rem;}
-    .settings__item h2{font-size: 1.2rem;}
-    .settings__item input{width: 100%;}
+
+@media only screen and (max-width: 400px) {
+    .box__title {
+        margin: 15px 0;
+        font-size: 1.7rem;
+    }
+
+    .music__box {
+        padding: 15px;
+    }
+
+    .music__box-main {
+        width: 85%;
+    }
+
+    .settings__title {
+        font-size: 1.5rem;
+    }
+
+    .settings__item h2 {
+        font-size: 1.2rem;
+    }
+
+    .settings__item input {
+        width: 100%;
+    }
 }
